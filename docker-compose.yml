@@ -7,8 +7,7 @@ services:
     restart: unless-stopped
     ports:
     - "80:80"
-    volumes:
-    -
+
 
   php:
     image: php:8.0
@@ -21,6 +20,10 @@ services:
     restart: unless-stopped
     volumes:
     - dbfile:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wundersoft
+
 
 volumes:
   dbfile:
