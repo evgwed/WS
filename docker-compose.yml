@@ -7,24 +7,31 @@ services:
     restart: unless-stopped
     ports:
     - "80:80"
+    - "443:443"
+    volumes:
+    - ./app:/var/app
+    - ./configs/nginx:/etc/nginx/conf.d
 
 
   php:
-    image: php:8.0
+    image: php:8.0-fpm
     container_name: php8
     restart: unless-stopped
+    volumes:
+    - ./app:/var/app
 
   mysql:
     image: mysql:8.0
     container_name: mysql8
     restart: unless-stopped
+    ports:
+    - "3306:3306"
     volumes:
-    - dbfile:/var/lib/mysql
+    - ./mysql:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: wundersoft
 
 
-volumes:
-  dbfile:
+
 
