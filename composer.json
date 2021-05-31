@@ -1,0 +1,12 @@
+{
+    "name": "animov/ws",
+    "authors": [
+        {
+            "name": "animov",
+            "email": "animovoffical@gmail.com"
+        }
+    ],
+    "require": {
+        "predis/predis": "^1.1"
+    }
+}

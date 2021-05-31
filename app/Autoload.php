@@ -6,7 +6,7 @@ spl_autoload_register(function ($class) {
     $prefix = 'App\\Autoload\\';
 
     // base directory for the namespace prefix
-    $base_dir = __DIR__ . '/';
+    $base_dir = __DIR__ . '/autoload/';
 
     // does the class use the namespace prefix?
     $len = strlen($prefix);
@@ -29,7 +29,8 @@ spl_autoload_register(function ($class) {
     }
 });
 
-
+use App\Autoload\Hello;
+use App\Autoload\Name;
 
 $greeting = new Hello('Hello');
 $name = new Name('Danil');
