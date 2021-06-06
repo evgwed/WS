@@ -1,9 +1,13 @@
 <?php
 
+/**
+ * Class Car
+ */
 class Car
 {
+
     /**
-     * @return string
+     * @return void
      */
     public function run()
     {
