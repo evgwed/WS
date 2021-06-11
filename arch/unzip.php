@@ -1,7 +1,16 @@
 <?php
+if ($argc !== 3) exit;
 
-$archive = $argv[1];
-$path = $argv[2];
+
+$path = $argv[1];
+if (!is_dir($path)) exit;
+
+
+$archive = $argv[2];
+$extension= explode(".", $archive);
+$extension = array_pop($extension);
+if ($extension !== "phpzip") exit;
+
 
 $data = file_get_contents($archive);
 $data = base64_decode($data);

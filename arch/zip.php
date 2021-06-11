@@ -1,8 +1,15 @@
 <?php
 
+if ($argc !== 3) exit;
 
 $path = $argv[1];
+if (!is_dir($path)) exit;
+
 $archive = $argv[2];
+$extension= explode(".", $archive);
+$extension = array_pop($extension);
+if ($extension !== "phpzip") exit;
+
 $result = "";
 $files = [];
 
